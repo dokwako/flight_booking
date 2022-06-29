@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save form</title>
+</head>
+<body>
+    {{message}}
+    <form action="/save" method="post">
+        <fieldset>
+            <legend>Drivers Details</legend>
+           
+            <div class="pt-3 pb-3">
+                <label for="" class="form-label">Driver_name</label> <br>
+                <input type="text" name="driver_name" id="driver_name" placeholder="Enter your Name"><br><br>
+            </div>
+            <div class="pb-3">
+                <label for="" class="form-label">Driver phone No</label> <br>
+                <input type="text" name="driver_phone" id="driver_phone" placeholder="Enter your Phone No"><br><br>
+            </div>
+            <div class="pb-3">
+                <label for="" class="form-label">Id number</label> <br>
+                <input type="text" name="idnumber" id="idnumber" placeholder="Enter your Id Number"><br><br>
+            </div>
+            <div class="pb-3">
+                <label for="" class="form-label">Car assigned</label> <br>
+                <input type="text" name="car_assigned" id="car_assigned" placeholder="Enter Car assigned"><br><br>
+            </div>
+            
+            <input type="submit" class="btn btn-success btn-lg" value="SAVE">
+        </fieldset>
+    </form>
+    
+</body>
+</html>

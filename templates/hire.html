@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hire</title>
+    <!-- https://getbootstrap.com/ -->
+
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<!-- schema 
+ on folder create 
+  hire.py
+  hire.html
+
+ database name== test-wanjau
+ table==hire
+     
+                                 index
+ model - var(50)                 -0
+ reg -- var(20) primarykey       -1
+ description (TEXT--200)         -2
+ colour -- var (20)              -3
+ location ( var -50)             -4
+ costStrike -- int (11)          -5
+ cost (int-11)                   -6
+ discount (var-20)               -7
+ image -- var (200)              -8
+
+-->
+
+</head>
+<body>
+<!-- start -->
+    <div  class="container">
+
+        <div class="row">
+
+            <h3 class="display-3 text-center">car hire agency</h3>
+
+            <div class="col-md-12">
+
+                <img src="http://coding.co.ke/images/main.jpg" alt="" width="100%">
+                <p class="lead"> <i>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, voluptates ratione a, 
+                    incidunt illo exercitationem necessitatibus quae rem numquam id similique eaque. 
+                    Quidem molestiae labore soluta voluptatibus explicabo. Officiis, suscipit? </i> </p>
+
+            </div>
+            
+
+        </div>
+        <!-- first row end-->
+
+        <section class="row">
+
+            <h2 class="display-4">Featured cars</h2>
+
+             {{message}}
+
+             {% for index in rows %}
+
+            <div class="col-md-4" >
+
+                <div class="cars shadow">
+
+                    <img src="{{index[8]}}" alt="" class="fluid">
+
+                    <div class="card-body">
+
+                        <h5> {{index[o]}} {{index[1]}}</h5>
+
+                        <p class="lead"> {{index[2]}}</p>
+
+                        <h5>{{index[3]}}</h5>
+
+                        <h5>{{index[4]}}</h5>
+
+                       <b> <strike>  <h5>{{index[5]}} KES</h5></strike>{{index[6]}} KES </b><br>
+                       <i>{{index[7]}} </i>
+                       <br>
+
+                       <button class="btn btn-warning btn-md" data-bs-toggle="modal" data-bs-target="#mymodal"> Hire Now!</button>
+
+                    </div>
+                </div>
+            </div>
+             {% endfor %}
+
+        
+        </section>
+
+
+       
+<div class="modal fade" id="mymodal" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Hire now</h5>
+        <button type="button" class="close" data-dismiss="modal"></button>
+      </div>
+      <!-- End of the header -->
+
+       <div class="modal-body">
+        <form action="/mpesa" method="post">
+            <input type="number" name="amount" id="" placeholder="Enter your amount" class="form-control"> <br>
+            <input type="tel" name="phone" id="" placeholder="Enter number 2547xxxxxxx" class="form-control"> <br>
+            <input type="submit" value="Pay now" class="btn btn-success btn-lg">
+        </form>
+      </div> 
+      <!-- end of body -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        
+      </div>
+      <!-- End of footer -->
+    </div>
+  </div>
+</div>
+
+
+    </div>
+<!-- end -->
+</body>
+</html>
