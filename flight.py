@@ -8,6 +8,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/book',methods=['POST','GET'])
+
 def book():
     if request.method=='POST':
          connection =pymysql.connect(host='localhost',user='root',password='',database='Denzil-flight')
@@ -26,6 +27,8 @@ def book():
          return 'Successfully booked your flight'
     else:
         return render_template('book.html')
+
+
 
         
 # SIGNING UP PROCEDURE
