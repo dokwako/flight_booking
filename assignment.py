@@ -14,6 +14,7 @@ def insert():
     connection.commit()
 
     print("YEES")
+    
 insert()
 
 
